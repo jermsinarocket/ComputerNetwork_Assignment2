@@ -1,0 +1,32 @@
+package Server;
+
+
+/**
+* A chat server that delivers public and private messages.
+* Author : Cho Seo Hyung.
+* Socket program assignment 2.
+* Last changed : November 12, 2015.
+*/
+
+
+import java.io.IOException;
+import java.net.InetAddress;
+
+public class ServerMain {
+
+	public static void main(String args[]) throws IOException {
+		
+		final int portNumber = 2222;
+		final InetAddress addr;
+		System.out.println("======================================" + "\n" + "HOSTED ON https://localhost:"
+					+ portNumber + "\n" + "======================================");
+		
+		Server server = new Server(portNumber);
+		//Start Server Thread
+		server.start();
+
+
+	}
+
+}
+ 

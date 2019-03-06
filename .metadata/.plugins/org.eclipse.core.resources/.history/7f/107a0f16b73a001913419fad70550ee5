@@ -1,0 +1,53 @@
+package Server;
+
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Server extends Thread {
+	
+	//The server port
+	private final int serverPort;
+	// The server socket.
+	private static ServerSocket serverSocket;;
+
+	
+	private static ArrayList<ClientThread> clientList = new ArrayList<>();
+	
+	public Server(int serverPort) {
+		this.serverPort = serverPort;
+	}
+	
+	public List<ClientThread> getClientList(){
+		return clientList;
+	}
+	 
+	@Override 
+	public void run(){
+
+		// a client socket for each separate connection is assigned to a new a client
+		// thread.
+		try {
+			// Open a Server Socket on the Port Number
+			serverSocket = new ServerSocket(serverPort);
+
+			while (true) {
+
+				// Start accepting Connections
+				System.out.println("About to accept Client Connection...");
+				Socket clientSocket = serverSocket.accept();
+				System.out.println("Accepted connection from " + clientSocket);
+
+				ClientThread thread = new ClientThread(this, clientSocket);
+				clientList.add(thread);
+				thread.start();
+
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
