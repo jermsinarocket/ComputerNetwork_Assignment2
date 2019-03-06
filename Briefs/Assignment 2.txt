@@ -1,0 +1,16 @@
+Assignment #2
+
+This assignment can be done individually or in groups of two. 
+It is worth a total of 4% of the final mark.
+
+The assignment is to develop an Internet text chatting
+program using sockets.
+(**Detailed requirements on the program will be notified**)
+
+You are to submit the following:
+1. Design and Implementation Document (5 or less pages)
+2. Source code (well-documented)
+3. Executable codes
+4. Screen capture video of program executions
+
+Have fun!
