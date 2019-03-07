@@ -3,4 +3,4 @@
 
 Socket Programmimng to create a **Internet Text Chatting Programme**
 
-Created with _**JAVA***_ using _**Eclipse IDE**_
+Created with _**JAVA**_ using _**Eclipse IDE**_
