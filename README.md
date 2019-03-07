@@ -4,3 +4,9 @@
 Socket Programmimng to create a **Internet Text Chatting Programme**
 
 Created with _**JAVA**_ using _**Eclipse IDE**_
+
+
+# Contributors
+* [Tan Wei Xuan](https://github.com/jermsinarocket)
+* [Zhang Xin Yue](https://github.com/zsemon)
+
