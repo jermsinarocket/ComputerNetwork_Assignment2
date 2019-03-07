@@ -3,10 +3,13 @@
 
 Utilising Sockets to develop an **Internet Text Chatting Programme**
 
-Created with _**JAVA**_ using _**Eclipse IDE**_
+## Language(s) used
+* JAVA
 
+## IDE(s) used
+* Eclipse
 
-# Contributors
+## Contributors
 * [Tan Wei Xuan](https://github.com/jermsinarocket)
 * [Zhang Xin Yue](https://github.com/zsemon)
 
