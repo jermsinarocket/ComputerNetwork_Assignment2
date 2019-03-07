@@ -187,6 +187,18 @@ clientSocket.close();
 \subsection{Server - Closing Connection}
 As my program is a multi-threaded chat server where multiple clients will be able to connect/disconnect at any time as long as the server is open, closing off the server will require the \textit{host} to close off the \textit{Server Socket} explictly on his/her end. This will release the port that the server is being binded to and prevent any more clients from connecting to it. The server can be terminated through either the \textit{command prompt/terminal} or the \textit{Integrated Development Environment (IDE)}.
 
+\section{Running the Program}
+\subsection{Integrated Development Environment}
+\begin{enumerate}
+  \item Import the Project
+  \item Run \textbf{\textit{ServerMain.java}} to start the \textbf{server}  
+  \item  Run \textbf{\textit{Client.java}} to start the client (Run \textit{\textbf{n}} times to start \textit{\textbf{n}} clients)
+\end{enumerate}
+\subsection{Exectuables}
+\begin{enumerate}
+  \item Run \textbf{\textit{ServerMain.bat}} to start the \textbf{server}\textit{(*DO NOT run SeverMain.jar)}
+  \item  Run \textbf{\textit{Client.jar}} to start the client (Run \textit{\textbf{n}} times to start \textit{\textbf{n}} clients)
+\end{enumerate}
 \section{References}
 \noindent [1] A Guide to Java Sockets
 \newline
