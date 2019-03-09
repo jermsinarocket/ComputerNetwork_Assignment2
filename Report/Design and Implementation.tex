@@ -35,14 +35,20 @@
  
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Tan Wei Xuan}
+\rhead{Assignment 2}
 \lhead{Design \& Implementation: Internet Text Chatting Program}
 \rfoot{Page \thepage}
 
  
 \begin{document}
 \title{\vspace{-1.0cm}\textbf{Design \& Implemenation: \linebreak Internet Text Chatting Program}}
-\author{49003140 Tan Wei Xuan}
+\author{
+  \textbf{Tan Wei Xuan (49003140)}\\
+  \texttt{tanweixuan@postech.ac.kr}
+  \and
+   \textbf{Zhang Xin Yue (49003143)}\\
+  \texttt{xyzhang@postech.ac.kr}
+}
 \date{\today}
 \maketitle
 
@@ -188,6 +194,7 @@ clientSocket.close();
 As my program is a multi-threaded chat server where multiple clients will be able to connect/disconnect at any time as long as the server is open, closing off the server will require the \textit{host} to close off the \textit{Server Socket} explictly on his/her end. This will release the port that the server is being binded to and prevent any more clients from connecting to it. The server can be terminated through either the \textit{command prompt/terminal} or the \textit{Integrated Development Environment (IDE)}.
 
 \section{Running the Program}
+\textit{* For detailed program execution, please refer to \textbf{Screen Record of Programme Execution.mp4} }
 \subsection{Integrated Development Environment}
 \begin{enumerate}
   \item Import the Project
