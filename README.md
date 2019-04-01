@@ -1,4 +1,4 @@
-# CSED3535 Computer Network Assignment 2 
+# CSED353 Computer Network Assignment 2 (Spring 2019, POSTECH)
 
 
 Utilising Sockets to develop an **Internet Text Chatting Programme**
