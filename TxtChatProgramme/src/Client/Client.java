@@ -152,8 +152,5 @@ public class Client implements Runnable, ActionListener {
       System.err.println("IOException:  " + e);
     }
   }
-  private String getServerAddress() {
-    return null;
-  }
 
 }

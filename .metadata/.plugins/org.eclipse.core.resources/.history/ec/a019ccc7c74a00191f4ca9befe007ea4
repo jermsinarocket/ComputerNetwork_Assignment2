@@ -1,0 +1,52 @@
+package Client;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.net.*;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.text.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.html.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Client2 extends Thread{
+	  final JTextPane jtextFilDiscu = new JTextPane();
+	  final JTextPane jtextListUsers = new JTextPane();
+	  final JTextField jtextInputChat = new JTextField();
+	  private String oldMsg = "";
+	  private Thread read;
+	  private String serverName;
+	  private int PORT;
+	  private String name;
+	  BufferedReader input;
+	  PrintWriter output;
+	  Socket server;
+	  
+	  public Client2(){
+		    this.serverName = "localhost";
+		    this.PORT = 2222;
+		    this.name = "nickname";
+		    
+		    String fontfamily = "Arial, sans-serif";
+		    Font font = new Font(fontfamily, Font.PLAIN, 15);
+		    
+		    final JFrame jfr = new JFrame("Chat");
+		    jfr.getContentPane().setLayout(null);
+		    jfr.setSize(700, 500);
+		    jfr.setResizable(false);
+		    jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  }
+	  
+	  
+	  public static void main(String[] args) throws Exception {
+		    Client2 client = new Client2();
+		  }
+}
+

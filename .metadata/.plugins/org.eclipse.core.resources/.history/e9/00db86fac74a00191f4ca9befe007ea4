@@ -1,0 +1,116 @@
+package Client;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.net.*;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.text.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.html.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Client2 extends Thread{
+	  final JTextPane jtextFilDiscu = new JTextPane();
+	  final JTextPane jtextListUsers = new JTextPane();
+	  final JTextField jtextInputChat = new JTextField();
+	  private String oldMsg = "";
+	  private Thread read;
+	  private String serverName;
+	  private int PORT;
+	  private String name;
+	  BufferedReader input;
+	  PrintWriter output;
+	  Socket server;
+	  
+	  public Client2(){
+		    this.serverName = "localhost";
+		    this.PORT = 2222;
+		    this.name = "nickname";
+		    
+		    String fontfamily = "Arial, sans-serif";
+		    Font font = new Font(fontfamily, Font.PLAIN, 15);
+		    
+		    final JFrame jfr = new JFrame("Chat");
+		    jfr.getContentPane().setLayout(null);
+		    jfr.setSize(700, 500);
+		    jfr.setResizable(false);
+		    jfr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 
+		    // Module du fil de discussion
+		    jtextFilDiscu.setBounds(25, 25, 490, 320);
+		    jtextFilDiscu.setFont(font);
+		    jtextFilDiscu.setMargin(new Insets(6, 6, 6, 6));
+		    jtextFilDiscu.setEditable(false);
+		    JScrollPane jtextFilDiscuSP = new JScrollPane(jtextFilDiscu);
+		    jtextFilDiscuSP.setBounds(25, 25, 490, 320);
+
+		    jtextFilDiscu.setContentType("text/html");
+		    jtextFilDiscu.putClientProperty(JEditorPane.HONOR_DISPLAY_PROPERTIES, true);
+
+		    // Module de la liste des utilisateurs
+		    jtextListUsers.setBounds(520, 25, 156, 320);
+		    jtextListUsers.setEditable(true);
+		    jtextListUsers.setFont(font);
+		    jtextListUsers.setMargin(new Insets(6, 6, 6, 6));
+		    jtextListUsers.setEditable(false);
+		    JScrollPane jsplistuser = new JScrollPane(jtextListUsers);
+		    jsplistuser.setBounds(520, 25, 156, 320);
+
+		    jtextListUsers.setContentType("text/html");
+		    jtextListUsers.putClientProperty(JEditorPane.HONOR_DISPLAY_PROPERTIES, true);
+
+		    // Field message user input
+		    jtextInputChat.setBounds(0, 350, 400, 50);
+		    jtextInputChat.setFont(font);
+		    jtextInputChat.setMargin(new Insets(6, 6, 6, 6));
+		    final JScrollPane jtextInputChatSP = new JScrollPane(jtextInputChat);
+		    jtextInputChatSP.setBounds(25, 350, 650, 50);
+
+		    // button send
+		    final JButton jsbtn = new JButton("Send");
+		    jsbtn.setFont(font);
+		    jsbtn.setBounds(575, 410, 100, 35);
+
+		    // button Disconnect
+		    final JButton jsbtndeco = new JButton("Disconnect");
+		    jsbtndeco.setFont(font);
+		    jsbtndeco.setBounds(25, 410, 130, 35);
+		    
+		    jtextInputChat.addKeyListener(new KeyAdapter() {
+		        // send message on Enter
+		        public void keyPressed(KeyEvent e) {
+		          if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+		            sendMessage();
+		          }
+
+		          // Get last message typed
+		          if (e.getKeyCode() == KeyEvent.VK_UP) {
+		            String currentMessage = jtextInputChat.getText().trim();
+		            jtextInputChat.setText(oldMsg);
+		            oldMsg = currentMessage;
+		          }
+
+		          if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+		            String currentMessage = jtextInputChat.getText().trim();
+		            jtextInputChat.setText(oldMsg);
+		            oldMsg = currentMessage;
+		          }
+		        }
+		      });
+
+	  
+	  }
+	  
+	  
+	  public static void main(String[] args) throws Exception {
+		    Client2 client = new Client2();
+		  }
+}
+
